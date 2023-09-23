@@ -49,5 +49,21 @@ print(sum(my_matrix))
 #Problem 6
 reverse <- function(s)
 {
-  
+  new_string <- ""
+  for(x in seq(nchar(s), 0))
+  {
+    new_string <- paste0(new_string, substr(s, x, x))
+  }
+  return (new_string)
 }
+
+print(reverse("lazy dog"))
+
+#Problem 7
+
+#Problem 8
+
+#Problem 9
+
+#Problem 10
+#Problem 10
