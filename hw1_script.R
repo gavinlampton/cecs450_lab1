@@ -2,7 +2,8 @@
 start_vector = c(seq(1,20))
 extracted_vector = c()
 
-for(x in start_vector) {
+for(x in start_vector) 
+{
   if(x %% 2 == 0) {
     extracted_vector <- append(extracted_vector, x)
   }
@@ -10,7 +11,8 @@ for(x in start_vector) {
 
 #Problem 2
 library(tidyverse)
-older_than_25 <- filter(as_tibble(read_csv('data.csv')), age > 25)
+wine_data <- as_tibble(read_csv('data.csv'))
+older_than_25 <- filter(wine_data, age > 25)
 print(older_than_25)
 
 #Problem 3
@@ -35,4 +37,17 @@ for(x in seq(0,10))
   print(paste0(x,"! is: ", my_factorial(x)))
 }
 
-#Problem 4 (Using data from problem 2)
+#Problem 4 (Using wine data from problem 2)
+library(ggplot2)
+wine_bar_plot <- ggplot(wine_data, aes(x=category))+geom_bar(stat="count",width=0.7,fill="steelblue")+theme_minimal()
+print(wine_bar_plot)
+
+#Problem 5
+my_matrix <- matrix(data = start_vector, nrow = 4, ncol = 5, dimnames = NULL)
+print(sum(my_matrix))
+
+#Problem 6
+reverse <- function(s)
+{
+  
+}
