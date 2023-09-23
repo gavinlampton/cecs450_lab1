@@ -9,3 +9,30 @@ for(x in start_vector) {
 }
 
 #Problem 2
+library(tidyverse)
+older_than_25 <- filter(as_tibble(read_csv('data.csv')), age > 25)
+print(older_than_25)
+
+#Problem 3
+my_factorial <- function(n) {
+  if(n == 0)
+  {
+    return (1)
+  }
+  else
+  {
+    return_value <- 1
+    
+    for(x in seq(1,n)){
+      return_value = return_value*x
+    }
+    return (return_value)
+  }
+}
+
+for(x in seq(0,10))
+{
+  print(paste0(x,"! is: ", my_factorial(x)))
+}
+
+#Problem 4 (Using data from problem 2)
